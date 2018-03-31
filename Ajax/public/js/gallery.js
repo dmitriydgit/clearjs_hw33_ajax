@@ -71,14 +71,14 @@ class BaseGallery {
 		let newUrlForItem = this.urlFomat(this.DOMElements.newUrl.value);
 		let newDescr = this.descriptionFormat(this.DOMElements.newDescription.value);
 		let newDate = moment();
-		let newId;
+		// let newId;
 		
-		for(let i = 0; i < 	this.cardsIdAtBase.length; i++){  //магия
-			if(this.cardsIdAtBase.indexOf(i)  == -1){
-				newId = i;
-				break;
-			}
-		}			
+		// for(let i = 0; i < 	this.cardsIdAtBase.length; i++){  //магия
+		// 	if(this.cardsIdAtBase.indexOf(i)  == -1){
+		// 		newId = i;
+		// 		break;
+		// 	}
+		// }			
 		let params = {
 					method: 'POST',
 					headers: {
@@ -87,7 +87,7 @@ class BaseGallery {
 					body: JSON.stringify({
 						"url": newUrlForItem,
 						"name": newName,
-						"id": newId,
+						//"id": newId,
 						"params": {
 								"status": true,
 								"progress": 1
@@ -297,7 +297,7 @@ class BaseGallery {
 				this.utils.removeButtonDisabled(element);
 				return true;
 			}
-			if (this.imageCounter === this.cardsLimit) {
+			if (this.imageCounter >= this.cardsLimit) {
 					this.utils.setButtonDisabled(element);
 					return false;
 			}
@@ -361,7 +361,7 @@ let galleryModule = new BaseGallery(domsForGallery , validatorModule, utils);
 
 
 
-// не реализовал подстановку пропущенного id при добавлении в базу
+// не реализовал подстановку пропущенного id при добавлении в базу ++
 // добавлять и убирать кнопки по нажатии на  добавить и редактировать ++++
 
 // полетела сортировка - доработать  +++++
