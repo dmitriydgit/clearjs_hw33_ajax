@@ -1,0 +1,3 @@
+
+let galleryModule = new BaseGallery();
+

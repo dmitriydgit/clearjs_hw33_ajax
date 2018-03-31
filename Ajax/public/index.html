@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>Форма входа</title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow headerTop" >
+      <h5 class="my-0 mr-md-auto font-weight-normal">JSExpert</h5>
+      <nav class="my-2 my-md-0 mr-md-3 hide" id = "personNavbar">
+        <a class="p-2 text-dark btn btn-outline-secondary" id = "showGalleryBtn" href="#">Галлерея</a>
+        <a class="p-2 text-dark" id = "showUserDataBtn" href="#">О пользователе</a>
+      </nav>
+      <a class="btn btn-outline-primary hide" id="reload" href="#" data-toggle="tooltip" title="" 
+            data-original-title="Press to go back on main page.">Выход</a>
+      
+    </div> 
+
+    <main class="text-center" role="main">
+        <div class="alert alert-danger hide" role="alert" id = "alert-massage1">
+            Ошибка! Данные введены не корректно. 
+        </div>
+        <div class="alert alert-danger hide" role="alert" id = "notFilledEmailMsg">
+            Заполните поле Имэйл. 
+        </div>
+        <div class="alert alert-danger hide" role="alert" id = "notFilledPassMsg">
+            Заполните поле пароль. 
+        </div>
+        <div class="alert alert-danger hide" role="alert" id = "wrongEmailMsg">
+            Имейл заполнен не корректно. 
+        </div>
+        <div class="alert alert-danger hide" role="alert" id = "wrongPassMsg">
+            Пароль заполнен не корректно. 
+        </div>
+
+
+        <form class="form-signin" id = "myForm">
+
+            <h1 class="h3 mb-3 font-weight-normal">Пожалуйста войдите</h1>
+            <label for="inputEmail" class="sr-only">Email</label>
+            <input type="text" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;" autocomplete="on">
+            <div class="mb-3"></div>
+            <label for="inputPassword" class="sr-only">Пароль</label>
+            <input type="text" id="inputPassword" class="form-control" placeholder="Password" required="" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;" autocomplete="on">
+            <div class="mb-3"></div>
+            <div class="checkbox " id="checkRememb">
+                <label>  <input type="checkbox" id="inputRemember" value="Remember-me" checked="">Remember me</label>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" id = "submitBtn" type="button">Войти</button>
+            <p class="mt-5 mb-3 text-muted">© 2017-2018</p>
+        </form>
+    </main>
+
+
+<!--*****************************PERSONBLOCK**********************************-->
+
+
+
+    <div class="person   hide  " id = "person">
+      
+
+
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="javascript:void(0)">Space XXX</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navb">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="#person-email">Login data</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#my_photo">Photo</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link " href="#environment">Environment</a>
+                </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" id = "search" type="text" placeholder="Search">
+                <button class="btn btn-success my-2 my-sm-0"  id = "searchBtn" type="button">Search</button>
+              </form>
+            </div>
+          </nav>
+
+
+ 
+  
+        <div  class="container-fluid personal-data">
+            <ul class = "list-inline">
+              <li class = "list-inline-item">
+                    <label for = "person-email"> <h4>Users login</h4> </label>
+                    <input type="text" id = "person-email" class = "form-control input">
+              </li>
+              <li class = "list-inline-item">
+                    <label for = "person-password"><h4>Password</h4> </label>
+                    <input type ="password" id = "person-password"  class = "form-control input">
+                    <button class = "btn btn-outline-secondary show" type="button" id="eye">Показать пароль </button>
+              </li>
+          </ul>
+        </div>
+        
+        <div class="container-fluid bg-1 text-center">
+          <h3>Who Am I?</h3>
+          <img src="img/spaceman2.jpg" class="img-responsive rounded-circle" id = "my_photo" style="display:inline" alt="Bird" width="350" height="350">
+          <h3>I'm an adventurer</h3>
+        </div>
+      
+        <div class="container-fluid bg-2 text-center">
+          <h3>What Am I?</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+          <a href="#" class="btn btn-default btn-lg">
+            <span class="glyphicon glyphicon-search"></span> Search
+          </a>
+        </div>
+      
+        <div class="container-fluid bg-3 text-center">    
+          <h3 id = "environment">Where To Find Me?</h3><br>
+          <div class="row">
+            <div class="col-sm-4">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <img src="img/space1.jpg" class="img-responsive" style="width:100%" alt="Image">
+            </div>
+            <div class="col-sm-4"> 
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <img src="img/space21.jpg" class="img-responsive" style="width:100%" alt="Image">
+            </div>
+            <div class="col-sm-4"> 
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <img src="img/space3.jpg" class="img-responsive" style="width:100%" alt="Image">
+            </div>
+          </div>
+        </div>
+  
+        <footer class="container-fluid bg-4 text-center">
+            <p>Space XXX 2018. All rights reserved. <a href="#">www.w3schools.com</a></p> 
+          </footer>
+      
+      </div>
+
+
+
+      <!--*****************************GALLERYBLOCK**********************************-->
+
+
+
+    <main id = "gallery" class = "gallery hide" role="main ">
+        <section class="jumbotron text-center gallery-body">
+          <div class="container">
+          
+            <div class="raw text-center">
+              <h2>Gallery</h2>
+            </div>
+           <div class="row text-center">
+              <div class  = "col-lg-12 col-md-12">
+                <div  id = "add-img" class = "btn btn-outline-primary"  data-target = "#myModal">Добавить изображение</div>
+                <br>
+              </div>
+              <div class  = "col-lg-12 col-md-12">
+                <br>
+                  <div class = "" > Добавлено изображений: <span id = "counter" > 0</span> / Осталось: <span id = "back-counter" > 0</span>  </div>
+                <br>
+              </div>
+              <div class="col-lg-4 col-md-4 mx-auto">
+                  <div class="form-group" >
+                    <select id="type-selector" class="form-control" >
+                      <option default value="0">Сортировать:</option>
+                      <option value="1">По имени А - Я</option>
+                      <option value="2">По имени Я - А</option>
+                      <option value="3">Сначала новые</option>
+                      <option value="4">Сначала старые</option>
+                    </select>
+                    <br>
+                </div>
+              </div>
+						</div>
+
+						<!--
+							{
+	url: "desktopwallpapers.org.ua/mini/201507/40058.jpg",
+	name: "RENAULT",
+	id : 10,
+	params: {
+		status: true,
+		progress: "40"
+	},
+	description : "Lorem ipsum dolor sit amet",
+	date : 1322159200637
+}
+
+						-->
+						<div class=" text-left form-add-new hide" id = "form-add-new">
+							<form>
+								<div class="form-group">
+									<label for="name">Name</label>
+									<input class="form-control" type="text" name="name" id="new-name">
+								</div>
+								<div class="form-group">
+									<label for="url">Url</label>
+									<input class="form-control" type="text" name="url" id="new-url">
+								</div>
+								<div class="form-group">
+									<label  for="description">Description</label>
+									<input class="form-control" type="text" name="description" id="new-descr">
+								</div>
+								<!-- <div class="form-group">
+									<label for="date">Date</label>
+									<input class="form-control" type="text" name="date" id="new-date">
+								</div>
+								<div class="form-group">
+									<label for="params-status">Status</label>
+									<input class="form-control" type="text" name="params-status" id="new-params-status">
+								</div>
+								<div class="form-group">
+									<label for="params-progress">Progress</label>
+									<input class="form-control" type="text" name="params-progress" id="new-params-progress">
+							</div> -->
+							</form>
+							<div  id = "add-new-img" class = "btn btn-outline-primary">Добавить</div>
+							<div  id = "edit-img" class = "btn btn-outline-primary">Редактировать</div>
+						</div>
+
+
+            <!-- Modal -->
+            <div class = "modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body"> <h3>Нет элементов для добавления.</h3></div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--end of modal -->
+
+          </div>
+        </section>
+
+        <div class="album py-5 bg-light">
+          <div class="container">
+            <div class="row" id="result">
+            </div>
+          </div>
+        </div>
+      </main>
+      
+
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+    <script src="https://getbootstrap.com/assets/js/vendor/popper.min.js"></script>
+    <script src="https://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+    <script src=js/login.js></script>
+    <script src=js/data.js></script>
+		<script src=js/validator.js></script>
+		<script src=js/utils.js></script>
+    <script src=js/gallery.js></script>
+    <script src=js/main.js></script>
+  </body>
+</html>
+
