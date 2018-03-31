@@ -15,12 +15,32 @@ const domsForLoginform = {
     personPasswordField : document.querySelector("#person-password"),
     gallery : document.querySelector("#gallery"),
     personNavbar : document.querySelector("#personNavbar"),
-    resultBlock : document.querySelector('#result')
+		resultBlock : document.querySelector('#result'),
+		alertMsg : document.querySelector("#alert-massage1"), 
+		notFilledEmailMsg : document.querySelector("#notFilledEmailMsg"),
+		notFilledPassMsg : document.querySelector("#notFilledPassMsg"),
+		wrongEmailMsg : document.querySelector("#wrongEmailMsg"),
+		wrongPassMsg : document.querySelector("#wrongPassMsg")
 };
 
+const userInfo = {
+	email:"ddd@gmail.com", 
+	password:"12345678",
+	sortMethod: "0"
+}
 
-let loginForm = new LoginForm(validatorModule , galleryModule , domsForLoginform);
+let loginForm = new LoginForm(validatorModule , galleryModule , domsForLoginform , userInfo, utils);
 loginForm.initComponent();
+
+
+
+
+
+
+
+
+
+
 
 /*
 let Inher = function(parent , child){
@@ -91,3 +111,30 @@ Inher.prototype = {
 
 
 
+/*
+working archieve 
+
+"use strict";
+ 
+const domsForLoginform = {
+    email : document.querySelector("#inputEmail"),
+    password : document.querySelector("#inputPassword"),
+    checkBoxRemememberMe : document.querySelector("#inputRemember"),
+    submitBtn : document.querySelector("#submitBtn"),
+    showUserDataBtn : document.querySelector("#showUserDataBtn"),
+    showGalleryBtn : document.querySelector("#showGalleryBtn"),
+    personPage : document.querySelector("#person"),
+    form : document.querySelector("#myForm"),
+    backBtn : document.querySelector("#reload"),
+    togglePasswordBtn : document.querySelector("#eye"),
+    personNameField : document.querySelector("#person-email"),
+    personPasswordField : document.querySelector("#person-password"),
+    gallery : document.querySelector("#gallery"),
+    personNavbar : document.querySelector("#personNavbar"),
+    resultBlock : document.querySelector('#result')
+};
+
+
+let loginForm = new LoginForm(validatorModule , galleryModule , domsForLoginform);
+loginForm.initComponent();
+*/

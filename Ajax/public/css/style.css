@@ -106,7 +106,11 @@ body {
   color:#fff;
 }
 #add-img{
-  background-color: #fff !important;
+  background-color: #fff
+}
+#add-img[disabled="true"]{
+	background-color: grey;
+	color: #ccc;
 }
 #add-img:hover, #add-img:focus, #add-img:active{
   color:#007bff !important;
@@ -141,6 +145,10 @@ body {
 
 }
 
+.button-blue{
+	background-color: #337ab7;
+}
 .button-grey{
+	background-color: grey;
 	
 }
